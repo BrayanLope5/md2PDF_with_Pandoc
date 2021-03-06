@@ -1,1 +1,9 @@
+This command will create a pdf from all .md files in the current folder only.
+No sub-folder .md files.
+
 pandoc -s -V documentclass=article -V fontsize=12pt -f markdown+lists_without_preceding_blankline+hard_line_breaks --toc --include-in-header FormattingSettings.tex -o output.pdf *.md
+
+The ConversionScript.py file also creates a .sh file but that files does
+nothing. It just shows the command that was ran. The command in ran from
+within the python script.
+FormattingSettings provides formatting for the created pdf.

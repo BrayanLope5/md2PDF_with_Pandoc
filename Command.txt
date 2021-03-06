@@ -1,0 +1,1 @@
+pandoc -s -V documentclass=article -V fontsize=12pt -f markdown+lists_without_preceding_blankline+hard_line_breaks --toc --include-in-header FormattingSettings.tex -o output.pdf *.md

@@ -12,7 +12,9 @@ workingDirPath = pathlib.Path().absolute()
 # Get paths to subfolders in working directory.
 subFoldersPath = [f.path for f in os.scandir(workingDirPath) if f.is_dir()]
 # Oorder the subfolders by date created.
-subFoldersPath.sort(key=os.path.getctime)
+# subFoldersPath.sort(key=os.path.getctime)
+# Oorder the subfolders by number at the beginning of the folder name.
+subFoldersPath.sort(key=lambda x: int("".join([i for i in x if i.isdigit()])))
 
 # Add file paths to a list. The files in the main folder/working directory are
 # put together at the beginning. Then each folder.
@@ -22,7 +24,9 @@ mainFolder = os.path.join(workingDirPath, "*.md")
 # Get a list of the files in the folder.
 MDfiles = glob.glob(mainFolder)
 # Sort list by date created.
-MDfiles.sort(key=os.path.getctime)
+# MDfiles.sort(key=os.path.getctime)
+# Sort list by number at the beginning of the file name.
+MDfiles.sort(key=lambda x: int("".join([i for i in x if i.isdigit()])))
 # Append files to master list.
 alldMDFilesPath.extend(MDfiles)
 # Now do the same for subfolders.
@@ -33,7 +37,9 @@ for dir in subFoldersPath:
     MDfiles = glob.glob(subFolderFiles)
     # Order files in subdolder by date. Then add them to the master list
     # together.
-    MDfiles.sort(key=os.path.getctime)
+    # MDfiles.sort(key=os.path.getctime)
+    # Sort list by number at the beginning of the file name.
+    MDfiles.sort(key=lambda x: int("".join([i for i in x if i.isdigit()])))
     # Add files individually.
     alldMDFilesPath.extend(MDfiles)
 

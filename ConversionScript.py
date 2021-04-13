@@ -80,6 +80,10 @@ bashScriptName = "ConversionScript.sh"
 # Create file.
 bashScript = open(bashScriptName, "w")
 # Pandoc command used. Broken for readability.
+# hard_line_breaks: Causes all newlines within a paragraph to be interpreted as
+# hard line breaks instead of spaces. Basically, new lines are actually new
+# lines. But I use Joplin's "soft breaks" checked because this way I make sure
+# to use backslash for new lines. To not rely on hard breaks.
 pandocCommand = (
     "pandoc -s -V documentclass=article -V fontsize=12pt -f "
     + "markdown+lists_without_preceding_blankline+hard_line_breaks "

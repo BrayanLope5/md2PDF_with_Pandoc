@@ -1,3 +1,9 @@
+"""
+Place this script and the FormattingSettings.tex file in the folder with
+the .md files to convert. Then from the command line run this python script.
+"""
+
+
 import glob
 import os
 import pathlib

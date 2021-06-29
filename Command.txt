@@ -1,3 +1,7 @@
+THIS FILE DOES NOTHING AT ALL. It is just to see the command used in one single
+line.
+
+
 This command will create a pdf from all .md files in the current folder only.
 No sub-folder .md files.
 
